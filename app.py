@@ -18,7 +18,7 @@ def get_restaurants():
     cur = conn.cursor()
 
     # Pass in a PostgreSQL query as a string
-    cur.execute('SELECT * FROM restaurants_sanantonio')
+    cur.execute('SELECT * FROM restaurants_sanantonio_clean')
 
     # Get the column names (keys)
     keys = [desc[0] for desc in cur.description]

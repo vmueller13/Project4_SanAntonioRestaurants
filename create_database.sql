@@ -1,23 +1,12 @@
--- Database: Restaurants_SanAntonio
-
---DROP DATABASE IF EXISTS "Restaurants_SanAntonio";
-
-CREATE DATABASE "Restaurants_SanAntonio"
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'English_United States.1252'
-    LC_CTYPE = 'English_United States.1252'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
+--Drop table if exists
+DROP TABLE restaurants_sanantonio_clean;
 -------------------------------------------------------------
-CREATE TABLE restaurants_sanantonio (
+CREATE TABLE restaurants_sanantonio_clean (
     id INTEGER, --restaurantList
     position VARCHAR,
     name VARCHAR, --restaurant
     score FLOAT,
-    ratings INTEGER,
+    ratings FLOAT,
     category VARCHAR,
     price_range VARCHAR, --priceRange
     lat FLOAT,
