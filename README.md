@@ -1,4 +1,4 @@
-# Project3_SanAntonio
+# Restaurant Scores in SanAntonio
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -17,6 +17,8 @@ To get started with the San Antonio Restaurants Dashboard, follow these steps:
 1. Clone the repository: `git clone `
 2. Navigate to the project directory: `cd `
 3. Install the libraries: psycopg2, chart.js
+4. Run the included code to set up your database and import the csv in pgadmin4s
+5. Change the information in the `config.py` file to your username, password and port for pgadmin4
 ![alt text](Images/Screenshot%202023-06-26%20at%2010.24.58%20PM.png)
 ## Usage
 1. Start the application:

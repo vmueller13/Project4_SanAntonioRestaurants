@@ -20,6 +20,7 @@ data.then(function (response) {
   let markers = L.markerClusterGroup();
   let listNames = [];
   let listScores = [];
+  let listClusters = [];
   const restaurantList = document.getElementById("restaurantList");
 
   // Sort the restaurants by score in descending order
@@ -36,16 +37,34 @@ data.then(function (response) {
     // Get the latitude and longitude from the location property.
     let lat = response[i].lat;
     let lng = response[i].lng;
+    
+    //create cluster labels for meaningful names
+    const clusterNames = {
+      0: "Top Shelf (4.7-5.0)",
+      1: "Middle of the Road (4.2-4.4)",
+      2: "Rock Bottom (2.9-3.6)",
+      3: "A Step Above Rock Bottom (3.7-4.1)",
+      4: "Aspirational Top Shelf (4.5-4.6)"
+    };
+
+    // Get the cluster label
+  let clusterLabel = response[i].cluster;
+
+  // Get the meaningful name for the cluster
+  let clusterName = clusterNames[clusterLabel]
 
     // Check if latitude and longitude exist.
     if (lat && lng) {
       // Create the HTML content for the popup.
       let popup = `<h3>${response[i].name}</h3>
         <p>Score: ${response[i].score}</p>
-        <p>Price Range: ${response[i].price_range}</p>`;
+        <p>Price Range: ${response[i].price_range}</p>
+        <p>Cluster: ${clusterName}</p>`;
+
       if (topRestaurants.includes(response[i])) {
         listNames.push(response[i].name);
         listScores.push(response[i].score);
+        listClusters.push(response[i].cluster);
       }
       const option = document.createElement('option');
       option.value = response[i].name;
