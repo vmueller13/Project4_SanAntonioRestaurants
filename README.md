@@ -49,7 +49,7 @@ Logistic Regression model for further analyis. To continue, we used kMeans to cl
 
 With this in mind, we were able to use these clusters to answer some questions about the cuisine available in San Antonio.
 ## Challenges
-Initially, when we started the machine learning step of the project, we started with linear regression. After receiving a negative r value, we realized that we had discrete values instead of continuous and needed to pivot to logistic regression instead. the other major challenge we faced was incorporating each of our visual elements into the tabs on the live web server. After troubleshooting as a team and revising the file path (many times!) we were able to successfully include all of our visuals.
+Initially, when we started the machine learning step of the project, we started with linear regression. After receiving a negative r value, we realized that we had discrete values instead of continuous and needed to pivot to logistic regression instead. The other major challenge we faced was incorporating each of our visual elements into the tabs on the live web server. After troubleshooting as a team and revising the file path (many times!) we were able to successfully include all of our visuals.
 
 As always, teamwork, communication and collaboration have helped us face and conquer each of these challenges (and more!).
 --The Cool Cat Coders: Asfia, Matty, Saroja, Taniya, Veronica
