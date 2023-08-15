@@ -19,11 +19,11 @@
         integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
         crossorigin="" />
     <!-- Marker cluster CSS -->
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
     <link rel="stylesheet" type="text/css"
         href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 </head>
 
 <body>
@@ -53,28 +53,50 @@
                             <tr>
                                 <td>Address: </td>
                                 <td id="address"></td>
-
                             </tr>
                             <tr>
                                 <td>Cluster: </td>
-                                <td id="cluster"></td>
-
+                                <td id="clusterName"></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
-        <div class="mapColumn">
-            <div id="map"></div>
-
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab('infoTab')">Home Tab</button>
+            <button class="tab-button" onclick="openTab('businessTab')">Consulting</button>
         </div>
-        <!-- <div class="Container chartColumns"><canvas id="badCanvas1" width="400" height="100"></canvas></div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-        <!-- Our JavaScript -->
+        <div class="tab-content" id="infoTab">
+            <div id="map"></div>
+        </div>
+        <div class="tab-content" id="consultingTab">
+            <page>What zip code should you stay in San Antonio to be close to delectable food?</page>
+            <page>Are all the good taco places actually inside 410?</page>
+        </div>
         <script type="text/javascript" src="/static/js/logic2.js"></script>
-    </div> -->
+        <script>
+            // Function to switch tabs
+            function openTab(tabName) {
+                var tabContent = document.getElementsByClassName("tab-content");
+
+                // Hide all tab content
+                for (var i = 0; i < tabContent.length; i++) {
+                    tabContent[i].style.display = "none";
+                }
+
+                // Show the selected tab content
+                document.getElementById(tabName).style.display = "block";
+            }
+
+            // Show the initial tab
+            document.getElementById("infoTab").style.display = "block";
+
+            // // Call the function to create and render the chart
+            // createChart();
+        </script>
+        
+    </div>
     <footer>
         <p>Cool Cat Coders<br>
             Asfia, Matty, Saroja, Taniya, Veronica

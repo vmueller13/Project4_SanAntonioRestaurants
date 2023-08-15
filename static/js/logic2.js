@@ -80,7 +80,7 @@ data.then(function (response) {
   }
 
   // Create an object for controlling layers
-  const overlayMaps = {
+  const baseMaps = {
     "All Restaurants": L.layerGroup(Object.values(clusterLayers)) // Show all markers initially
   };
 
@@ -89,38 +89,66 @@ data.then(function (response) {
 
   // Add each cluster layer to the overlayMaps
   desiredClusterOrder.forEach(clusterLabel => {
-    overlayMaps[clusterNames[clusterLabel]] = clusterLayers[clusterLabel];
+    baseMaps[clusterNames[clusterLabel]] = clusterLayers[clusterLabel];
   });
 
-    // Add a control for toggling layers
-    L.control.layers(overlayMaps).addTo(myMap);
+  // Add a control for toggling layers
+  const layerControl = L.control.layers(baseMaps).addTo(myMap);
 
-    // Initialize the map with all markers shown initially
-    myMap.addLayer(overlayMaps["All Restaurants"]);
+  // Initialize the map with all markers shown initially
+  myMap.addLayer(baseMaps["All Restaurants"]);
 
-  });
+  // Select the "All Restaurants" option in the layer control
+  layerControl.getContainer().querySelector('input[type="radio"][value="All Restaurants"]');
+});
 
-  // Function to get color for each cluster
-  function getColorForCluster(clusterLabel) {
-    // Define color codes for clusters
-    const colorCodes = {
-      0: "#FF8674", // sea green Green for Top Shelf
-      4: "#7D0552", // plum velvet for aspirational top shelf
-      1: "#5453A6", // periwinkle for middle of the road
-      3: "#1899de", // Light blue for a step above rock bottom
-      2: "#C71585" // Medium Violet Red for Rock Bottom
+// Function to get color for each cluster
+function getColorForCluster(clusterLabel) {
+  // Define color codes for clusters
+  const colorCodes = {
+    0: "#FF8674", // sea green Green for Top Shelf
+    4: "#7D0552", // plum velvet for aspirational top shelf
+    1: "#5453A6", // periwinkle for middle of the road
+    3: "#1899de", // Light blue for a step above rock bottom
+    2: "#C71585" // Medium Violet Red for Rock Bottom
 
-    };
+  };
 
-    return colorCodes[clusterLabel]; // Return the color code for the given cluster label
+  return colorCodes[clusterLabel]; // Return the color code for the given cluster label
+}
+restaurantList.addEventListener("change", function (event) {
+  const address = this.options[this.selectedIndex].getAttribute('data-address');
+  document.getElementById('address').innerHTML = address;
+  const priceRange = this.options[this.selectedIndex].getAttribute('data-price-range');
+  document.getElementById('priceRange').innerHTML = priceRange;
+  const category = this.options[this.selectedIndex].getAttribute('data-category');
+  document.getElementById('category').innerHTML = category;
+  const cluster = this.options[this.selectedIndex].getAttribute('data-cluster');
+  document.getElementById('clusterName').innerHTML = cluster;
+});
+
+// Function to switch tabs
+function openTab(tabName) {
+  var tabContents = document.getElementsByClassName("tab-content");
+
+  // Hide all tab content
+  for (var i = 0; i < tabContents.length; i++) {
+    tabContents[i].style.display = "none";
   }
-  restaurantList.addEventListener("change", function (event) {
-    const address = this.options[this.selectedIndex].getAttribute('data-address');
-    document.getElementById('address').innerHTML = address;
-    const priceRange = this.options[this.selectedIndex].getAttribute('data-price-range');
-    document.getElementById('priceRange').innerHTML = priceRange;
-    const category = this.options[this.selectedIndex].getAttribute('data-category');
-    document.getElementById('category').innerHTML = category;
-    const cluster = this.options[this.selectedIndex].getAttribute('data-cluster');
-    document.getElementById('clusterName').innerHTML = cluster;
-  });
+
+  // Show the selected tab content
+  document.getElementById(tabName).style.display = "block";
+
+  // If switching to the business tab, hide the map and show the chart
+  if (tabName === 'consultingTab') {
+    document.getElementById('map').style.display = 'none';
+    document.getElementById('chartContainer').style.display = 'block';
+  } else {
+    // Otherwise, show the map and hide the chart
+    document.getElementById('map').style.display = 'block';
+    document.getElementById('chartContainer').style.display = 'none';
+  }
+}
+
+// Show the initial tab
+document.getElementById("infoTab").style.display = "block";
