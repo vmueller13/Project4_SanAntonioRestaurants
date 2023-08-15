@@ -36,10 +36,6 @@
     <div class="main-grid">
         <div class="dropDownColumn">
             <div class="restaurantList">
-                <label for="categoryDropdown">Select a category:</label>
-                <select name="category" id="categoryDropdown" onchange="updateRestaurantList()">
-                    <option value="">All Categories</option>
-                </select>
                 <label for="restaurantDropdown">Select a restaurant to see its information:</label>
                 <select name="restaurant" id="restaurantList">
                 </select>
@@ -76,8 +72,14 @@
         </div>
         <div class="tab-content" id="consultingTab">
             <p>What zip code should you stay in San Antonio to be close to delectable food?</p>
+            <div id="image">
+                <img src="top_shelf_zip.png" height="400" width="500">
+            </div>
             <p>Are all the good Mexican food places actually inside 410?</p>
             <p>What are the highest scored food categories in Cluster 0: Top Shelf (4.7-5.0)?</p>
+            <div id="image">
+                <img src="top_shelf_category.png" height="400" width="500">
+            </div>
         </div>
         <script>
             // Function to switch tabs

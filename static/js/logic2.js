@@ -117,43 +117,6 @@ function getColorForCluster(clusterLabel) {
   return colorCodes[clusterLabel]; // Return the color code for the given cluster label
 }
 
-
-// Call the categories from data.d3.json(url)
-const uniqueCategories = [...new Set(data.map(item => item.category))];
-
-// Populate the category dropdown options
-const categoryDropdown = document.getElementById("categoryDropdown");
-categoryDropdown.innerHTML = '<option value="">All Categories</option>'; // Reset the dropdown
-uniqueCategories.forEach(category => {
-    const option = document.createElement("option");
-    option.value = category;
-    option.text = category;
-    categoryDropdown.appendChild(option);
-});
-
-// Update the restaurant list based on the selected category
-function updateRestaurantList() {
-  var selectedCategory = document.getElementById("categoryDropdown").value;
-  var restaurantList = document.getElementById("restaurantList");
-
-  // Clear the existing options
-  restaurantList.innerHTML = "";
-
-  // Loop through the restaurants data and populate the restaurant list
-    for (var i = 0; i < data.length; i++) {
-        var restaurant = data[i];
-        if (selectedCategory === "" || selectedCategory === restaurant.category) {
-            var option = document.createElement("option");
-            option.value = restaurant.name;
-            option.text = restaurant.name;
-            restaurantList.appendChild(option);
-        }
-    }
-}
-
-// Call the updateRestaurantList function initially to populate the restaurant list
-updateRestaurantList();
-
 restaurantList.addEventListener("change", function (event) {
   const address = this.options[this.selectedIndex].getAttribute('data-address');
   document.getElementById('address').innerHTML = address;
