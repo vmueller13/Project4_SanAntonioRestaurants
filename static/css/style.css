@@ -71,6 +71,12 @@ html {
   height: 100%;
   padding: 30px;
 }
+.consultingTab {
+  grid-row: span 1 / span 1;
+  grid-column-start: 2;
+  height: 100%;
+  padding: 30px;
+}
 .chartColumns {
   grid-row: span 1 / span 1;
   grid-column-start: 2;

@@ -36,6 +36,10 @@
     <div class="main-grid">
         <div class="dropDownColumn">
             <div class="restaurantList">
+                <label for="categoryDropdown">Select a category:</label>
+                <select name="category" id="categoryDropdown" onchange="updateRestaurantList()">
+                    <option value="">All Categories</option>
+                </select>
                 <label for="restaurantDropdown">Select a restaurant to see its information:</label>
                 <select name="restaurant" id="restaurantList">
                 </select>
@@ -65,16 +69,16 @@
         </div>
         <div class="tabs">
             <button class="tab-button" onclick="openTab('infoTab')">Home Tab</button>
-            <button class="tab-button" onclick="openTab('businessTab')">Consulting</button>
+            <button class="tab-button" onclick="openTab('consultingTab')">Consulting</button>
         </div>
         <div class="tab-content" id="infoTab">
             <div id="map"></div>
         </div>
         <div class="tab-content" id="consultingTab">
-            <page>What zip code should you stay in San Antonio to be close to delectable food?</page>
-            <page>Are all the good taco places actually inside 410?</page>
+            <p>What zip code should you stay in San Antonio to be close to delectable food?</p>
+            <p>Are all the good Mexican food places actually inside 410?</p>
+            <p>What are the highest scored food categories in Cluster 0: Top Shelf (4.7-5.0)?</p>
         </div>
-        <script type="text/javascript" src="/static/js/logic2.js"></script>
         <script>
             // Function to switch tabs
             function openTab(tabName) {
@@ -91,11 +95,8 @@
 
             // Show the initial tab
             document.getElementById("infoTab").style.display = "block";
-
-            // // Call the function to create and render the chart
-            // createChart();
         </script>
-        
+        <script type="text/javascript" src="/static/js/logic2.js"></script>
     </div>
     <footer>
         <p>Cool Cat Coders<br>
