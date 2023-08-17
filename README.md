@@ -13,7 +13,7 @@ The San Antonio Restaurants Dashboard is a web-based application that allows use
 - Interactive map showing restaurant locations
 - Filter layers on the map to show restaurants grouped by score
 - Restaurant list with sorting and filtering options
-![New Dashboard](Images/new_dashboard.png)
+![New Dashboard](static/Images/new_dashboard.png)
 ## Getting Started
 To get started with the San Antonio Restaurants Dashboard, follow these steps:
 1. Clone the repository: `git clone `
@@ -27,7 +27,7 @@ To get started with the San Antonio Restaurants Dashboard, follow these steps:
 2. Open your web browser and go to `http://localhost:5000` to access the dashboard.
 3. Explore the various visualizations and interact with the features.
    
-![alt text](Images/Screenshot%202023-06-26%20at%208.33.00%20PM.png)
+![alt text](static/Images/Screenshot%202023-06-26%20at%208.33.00%20PM.png)
 
 ## Processes and Technologies
 
@@ -37,15 +37,15 @@ The first part of this project neccessitated the following libraries and techniq
 **Machine Learning**
 To begin this part of the project, we imported the libraries and techniques: `sklearn.metrics`, `sklearn.cluster`, `kMeans`, `StandardScaler`, `pandas`, `matplotlib`, `imblearn.over_sampling`, `RandomOverSampler`, `Seaborn` and `numpy`. We first cleaned up the data in Jupyter Notebook; dropping NaN values and unecessary columns so that we had a clean dataset at 558 rows and six columns. With this cleaned dataset, we were able to use `get_dummies` to convert categorical columns to numerical values and conduct a logistical regression. An assessment of the model gave us a Balanced Accuracy Score: 0.5, Confusion Matrix: [[  0   9] [  0 131]] and a Classification Report as seen below:
 
-![Classification Report](Images/classification_report.png)
+![Classification Report](static/Images/classification_report.png)
 
 In order to further calibrate and test our model, we decided to create a logistic regression model with resampled training data. Using `RandomOverSampler`, we were able to achieve a Balanced Accuracy Score: 0.5250212044105174, Confusion Matrix: [[  1   8] [  8 123]] and a Classification Report:
 
-![RandomOverSampler Classification Report](Images/resampled_report.png)
+![RandomOverSampler Classification Report](static/Images/resampled_report.png)
 
 Since there wasn't any significant improvement to the balanced accuracy score or the classification report, we recommend using the original 
 Logistic Regression model for further analyis. To continue, we used kMeans to cluster the data. In looking at the clustering we noticed two significant insights. First, that the model clustered the restaurants based on the score (i.e. 4-7-5.0 scores in the same cluster) and second, that the model also took into account the price of the restaurant as well (i.e. $ mostly in one cluster, $$ mostly in another cluster etc.)
-![kMeans Clustering](Images/kmeans_cluster.png)
+![kMeans Clustering](Images/static/kmeans_cluster.png)
 
 With this in mind, we were able to use these clusters to answer some questions about the cuisine available in San Antonio.
 ## Challenges
