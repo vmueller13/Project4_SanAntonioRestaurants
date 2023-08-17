@@ -151,28 +151,3 @@ function openTab(tabName) {
 
 // Show the initial tab
 document.getElementById("infoTab").style.display = "block";
-
-// //Image Urls to add to tabs
-// const imageUrls = [
-//   "top_shelf_zip.png",
-//   "top_shelf_category.png"
-// ];
-
-// //connect to the HTML <div> element
-// const imageContainer = document.getElementById("imageContainer");
-
-// //loop through each picture in the list
-// imageUrls.forEach(imageUrl => {
-//   const imgElement = document.createElement("img");
-//   imgElement.src = imageUrl;
-//   imgElement.alt = "Image";
-//   //add the image to the container and display on the site
-//   imageContainer.appendChild(imgElement);
-// });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const imageContainer = document.getElementById("imageContainer");
-  const imageElement = document.createElement("img");
-  imageElement.src = "top_shelf_zip.png"; // Replace with your image path
-  imageContainer.appendChild(imageElement);
-  });

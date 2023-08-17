@@ -45,6 +45,11 @@ body {
   background-color: #ffe6eb;
 }
 
+.image {
+  padding: 30px
+}
+
+
 #map,
 
 html {
