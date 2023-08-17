@@ -59,11 +59,13 @@ After clustering our data we created these visualizations to answer these questi
 
 This bar chart shows the zip codes that are contained in the top shelf cluster (cluster 0). The zip code with the highest number of highly rated restaurants is 78258 or Stone Oak. This is a high end neighborhood in San Antonio where property is valued at half a million dollars or more. The second highest zipcode is 78209. Alamo Heights/Terrell Hills is right off of Broadway, near a lot of new development in the city, we now know that this includes good places to eat too! The third highest zip code is 78216. This zip code is near Ridgeview and Thousand Oaks. With the shopping center here as well as other quality establishments, this zip code area is also near the airport, making it a prime spot for visitors to eat, shop and stay without missing their flights!
 
-![Top shelf zip codes](static/Images/top_shelp_zip.png)
+![Top shelf zip codes](static/Images/top_shelf_zip.png)
 
 #### Question 2 ####
 
 This question explores a popular saying in San Antonio that all the good places to each are inside the 410 loop. While this might have been true at one time, this is not longer the case. Out of the 104 Mexican food places in the Top Shelf cluster, only nine of the restaurants are located inside the 410 loop. Therefore, we conclude that the development of San Antonio as the city grows, not only brings good food places outside the loop 410, but all over the city.
+
+
 -- [San Antonio Zip Codes](https://www.maxleaman.com/mortgage-resources/texas-zip-code-maps/san-antonio-zip-code-map/ "San Antonio Zip Codes")
 
 
