@@ -45,7 +45,7 @@ In order to further calibrate and test our model, we decided to create a logisti
 
 Since there wasn't any significant improvement to the balanced accuracy score or the classification report, we recommend using the original 
 Logistic Regression model for further analyis. To continue, we used kMeans to cluster the data. In looking at the clustering we noticed two significant insights. First, that the model clustered the restaurants based on the score (i.e. 4-7-5.0 scores in the same cluster) and second, that the model also took into account the price of the restaurant as well (i.e. $ mostly in one cluster, $$ mostly in another cluster etc.)
-![kMeans Clustering](Images/static/kmeans_cluster.png)
+![kMeans Clustering](static/Images/kmeans_cluster.png)
 
 With this in mind, we were able to use these clusters to answer some questions about the cuisine available in San Antonio.
 ## Challenges
